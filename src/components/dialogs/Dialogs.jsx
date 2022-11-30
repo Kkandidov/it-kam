@@ -5,11 +5,11 @@ import React from "react";
 
 const Dialogs = (props) => {
 
-	let dialogDataElements = props.state.dialogData.map((data) =>
+	let dialogDataElements = props.dialogData.map((data) =>
 			<Dialog name={data.name} id={data.id}/>
 	);
 
-	let messageDataElements = props.state.messageData.map((data) =>
+	let messageDataElements = props.messageData.map((data) =>
 			<Message message={data.message}/>
 	);
 
@@ -29,7 +29,7 @@ const Dialogs = (props) => {
 					<div>{messageDataElements}</div>
 					<div>
 						<div><textarea onChange={onChangeNewMessage}
-									   value={props.state.newMessage}
+									   value={props.newMessage}
 									   placeholder='Enter new message'></textarea></div>
 						<div>
 							<button onClick={onAddNewMessage}>Send Message</button>
