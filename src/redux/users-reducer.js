@@ -3,13 +3,7 @@ const UNFOLLOW = "UNFOLLOW"
 const SET_USERS = "SET-USERS"
 
 let initiatedState = {
-	users: [
-		{id: 1, photoUrl: 'https://t3.ftcdn.net/jpg/02/95/94/94/360_F_295949484_8BrlWkTrPXTYzgMn3UebDl1O13PcVNMU.jpg', followed: false, fullName: 'Dima', status: 'I am a boss1', location: {city: 'Minsk', country: 'Belarus'}},
-		{id: 2, photoUrl: 'https://t3.ftcdn.net/jpg/02/95/94/94/360_F_295949484_8BrlWkTrPXTYzgMn3UebDl1O13PcVNMU.jpg', followed: true, fullName: 'Kostya', status: 'I am a boss2', location: {city: 'Moskwa', country: 'Russia'}},
-		{id: 3, photoUrl: 'https://t3.ftcdn.net/jpg/02/95/94/94/360_F_295949484_8BrlWkTrPXTYzgMn3UebDl1O13PcVNMU.jpg', followed: false, fullName: 'Lesha', status: 'I am a boss3', location: {city: 'Piter', country: 'Russia'}},
-		{id: 4, photoUrl: 'https://t3.ftcdn.net/jpg/02/95/94/94/360_F_295949484_8BrlWkTrPXTYzgMn3UebDl1O13PcVNMU.jpg', followed: true, fullName: 'Saha', status: 'I am a boss4', location: {city: 'Kiev', country: 'Ukraine'}},
-		{id: 5, photoUrl: 'https://t3.ftcdn.net/jpg/02/95/94/94/360_F_295949484_8BrlWkTrPXTYzgMn3UebDl1O13PcVNMU.jpg', followed: true, fullName: 'Sveta', status: 'I am a boss5', location: {city: 'Wroclaw', country: 'Poland'}}
-	]
+	users: []
 }
 
 const usersReducer = (state = initiatedState, action) => {

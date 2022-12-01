@@ -1,4 +1,6 @@
 import s from './Users.module.css';
+import axios from "axios";
+import userPhoto from '../../assets/images/img.png'
 
 let User = (props) => {
 	let user = props.user;
@@ -6,7 +8,7 @@ let User = (props) => {
 			<div key={user.id}>
 				<span>
 					<div>
-						<img className={s.userPhoto} src={user.photoUrl}/>
+						<img className={s.userPhoto} src={user.photos.small != null ? user.photos.small : userPhoto}/>
 					</div>
 					<div>
 						{
@@ -19,12 +21,12 @@ let User = (props) => {
 				</span>
 				<span>
 					<span>
-						<div>{user.fullName}</div>
+						<div>{user.name}</div>
 						<div>{user.status}</div>
 					</span>
 					<span>
-						<div>{user.location.country}</div>
-						<div>{user.location.city}</div>
+						{/*<div>{user.location.country}</div>*/}
+						{/*<div>{user.location.city}</div>*/}
 					</span>
 				</span>
 			</div>
@@ -32,8 +34,18 @@ let User = (props) => {
 }
 
 const Users = (props) => {
+	let getUsers = () => {
+		if (props.users.length === 0) {
+			axios.get("https://social-network.samuraijs.com/api/1.0/users")
+					.then(resp => {
+						props.setUsers(resp.data.items)
+					})
+		}
+	}
+
 	return (
 			<div>
+				<button onClick={getUsers}>Get Users</button>
 				{
 					props.users.map(u => <User user={u} follow={props.follow} unfollow={props.unFollow}/>)
 				}
