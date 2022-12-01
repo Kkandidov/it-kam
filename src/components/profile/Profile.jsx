@@ -1,7 +1,7 @@
 import ProfileInfo from "./profileinfo/ProfileInfo";
 import MyPostsContainer from "./myposts/MyPostsContainer";
 
-const Profile = (props) => {
+const Profile = () => {
 	return (
 			<div>
 				<ProfileInfo/>
