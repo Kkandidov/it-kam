@@ -1,18 +1,9 @@
 import s from './Users.module.css';
-import axios from "axios";
 import userPhoto from '../../assets/images/img.png'
 import React from "react";
+import axios from "axios";
 
 class Users extends React.Component {
-	constructor(props) {
-		super(props);
-		alert('NEW');
-
-		axios.get("https://social-network.samuraijs.com/api/1.0/users")
-				.then(resp => {
-					this.props.setUsers(resp.data.items)
-				})
-	}
 
 	render() {
 		return (
@@ -49,6 +40,13 @@ class Users extends React.Component {
 					}
 				</div>
 		)
+	}
+
+	componentDidMount() {
+		axios.get("https://social-network.samuraijs.com/api/1.0/users")
+				.then(resp => {
+					this.props.setUsers(resp.data.items)
+				})
 	}
 }
 
