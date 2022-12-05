@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {follow, setCurrentPage, setTotalUserCount, setUsers, toggleFollowingInProgress, toggleIsFetching, unFollow} from "../../redux/users-reducer";
+import {follow, followSuccess, getUsers, setCurrentPage, toggleFollowingInProgress, unFollow, unFollowSuccess} from "../../redux/users-reducer";
 import UsersAPIComponent from "./UsersAPIComponent";
 
 let stateToProps = (state) => {
@@ -14,13 +14,13 @@ let stateToProps = (state) => {
 }
 
 let dispatchToProps = {
-	follow,
-	unFollow,
-	setUsers,
+	followSuccess,
+	unFollowSuccess,
 	setCurrentPage,
-	setTotalUserCount,
-	toggleIsFetching,
-	toggleFollowingInProgress
+	toggleFollowingInProgress,
+	getUsers,
+	follow,
+	unFollow
 }
 
 const UsersContainer = connect(stateToProps, dispatchToProps)(UsersAPIComponent);

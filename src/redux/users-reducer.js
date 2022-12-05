@@ -1,3 +1,5 @@
+import {userApi} from "../components/api/api";
+
 const FOLLOW = "FOLLOW"
 const UNFOLLOW = "UNFOLLOW"
 const SET_USERS = "SET-USERS"
@@ -55,12 +57,50 @@ const usersReducer = (state = initiatedState, action) => {
 	}
 }
 
-export const follow = (userId) => ({type: FOLLOW, userId: userId})
-export const unFollow = (userId) => ({type: UNFOLLOW, userId: userId})
+export const followSuccess = (userId) => ({type: FOLLOW, userId: userId})
+export const unFollowSuccess = (userId) => ({type: UNFOLLOW, userId: userId})
 export const setUsers = (users) => ({type: SET_USERS, users: users})
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage: currentPage})
 export const setTotalUserCount = (totalCount) => ({type: SET_TOTAL_USER_COUNT, totalCount: totalCount})
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching: isFetching})
 export const toggleFollowingInProgress = (followingInProgress, userId) => ({type: TOGGLE_FOLLOWING_IN_PROGRESS, followingInProgress, userId})
+
+export const getUsers = (currentPage, pageSize) => {
+	return (dispatch) => {
+		dispatch(toggleIsFetching(true));
+		userApi.getUsers(currentPage, pageSize)
+				.then(data => {
+					dispatch(toggleIsFetching(false));
+					dispatch(setUsers(data.items));
+					dispatch(setTotalUserCount(data.totalCount));
+				})
+	}
+}
+
+export const unFollow = (userId) => {
+	return (dispatch) => {
+		dispatch(toggleFollowingInProgress(true, userId))
+		userApi.unfollow(userId)
+				.then(data => {
+					if (data.resultCode === 0) {
+						dispatch(unFollowSuccess(userId));
+					}
+					dispatch(toggleFollowingInProgress(false, userId))
+				})
+	}
+}
+
+export const follow = (userId) => {
+	return (dispatch) => {
+		dispatch(toggleFollowingInProgress(true, userId))
+		userApi.follow(userId)
+				.then(data => {
+					if (data.resultCode === 0) {
+						dispatch(followSuccess(userId));
+					}
+					dispatch(toggleFollowingInProgress(false, userId))
+				})
+	}
+}
 
 export default usersReducer;
