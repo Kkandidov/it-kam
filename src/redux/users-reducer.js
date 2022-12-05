@@ -4,6 +4,7 @@ const SET_USERS = "SET-USERS"
 const SET_CURRENT_PAGE = "SET-CURRENT-PAGE"
 const SET_TOTAL_USER_COUNT = "SET-TOTAL-USER-COUNT"
 const TOGGLE_IS_FETCHING = "TOGGLE-IS-FETCHING"
+const TOGGLE_FOLLOWING_IN_PROGRESS = "TOGGLE_FOLLOWING_IN_PROGRESS"
 
 let initiatedState = {
 	users: [],
@@ -11,6 +12,7 @@ let initiatedState = {
 	totalUserCount: 0,
 	currentPage: 1,
 	isFetching: true,
+	followingInProgress: [],
 }
 
 const usersReducer = (state = initiatedState, action) => {
@@ -41,6 +43,13 @@ const usersReducer = (state = initiatedState, action) => {
 			return {...state, totalUserCount: action.totalCount}
 		case TOGGLE_IS_FETCHING:
 			return {...state, isFetching: action.isFetching}
+		case TOGGLE_FOLLOWING_IN_PROGRESS:
+			return {
+				...state,
+				followingInProgress: action.followingInProgress
+						? [...state.followingInProgress, action.userId]
+						: [state.followingInProgress.filter(id => id !== action.userId)]
+			}
 		default :
 			return state
 	}
@@ -52,5 +61,6 @@ export const setUsers = (users) => ({type: SET_USERS, users: users})
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage: currentPage})
 export const setTotalUserCount = (totalCount) => ({type: SET_TOTAL_USER_COUNT, totalCount: totalCount})
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching: isFetching})
+export const toggleFollowingInProgress = (followingInProgress, userId) => ({type: TOGGLE_FOLLOWING_IN_PROGRESS, followingInProgress, userId})
 
 export default usersReducer;

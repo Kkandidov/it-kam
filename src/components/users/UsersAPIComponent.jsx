@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import Users from "./Users";
 import Preloader from "../common/preloader/Preloader";
 import {getUsers} from "../api/api";
@@ -42,7 +41,9 @@ class UsersAPIComponent extends React.Component {
 						   onPageChanged={this.onPageChanged}
 						   users={this.props.users}
 						   unFollow={this.props.unFollow}
-						   follow={this.props.follow}/>
+						   follow={this.props.follow}
+						   toggleFollowingInProgress={this.props.toggleFollowingInProgress}
+						   followingInProgress={this.props.followingInProgress}/>
 				</>
 		)
 	}
