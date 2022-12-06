@@ -28,5 +28,5 @@ let dispatchToProps = {
 export default compose(
 		connect(stateToPropsForRouter, dispatchToProps),
 		withRouter,
-		withAuthRedirect
+		// withAuthRedirect
 )(ProfileContainer);
