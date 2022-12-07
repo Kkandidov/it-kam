@@ -19,6 +19,8 @@ let renderTree = (store) => root.render(
 		</React.StrictMode>
 );
 
+window.store = store;
+
 renderTree(store);
 store.subscribe(() => renderTree(store));
 
