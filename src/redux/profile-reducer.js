@@ -56,7 +56,7 @@ export const setUserStatus = (userStatus) => ({type: SET_USER_STATUS, userStatus
 export const getProfile = (profileId) => {
 	return (dispatch) => {
 		if (!profileId) {
-			profileId = 2;
+			profileId = 26978;
 		}
 		userApi.getProfile(profileId)
 				.then(data => {
@@ -79,7 +79,7 @@ export const updateStatus = (userStatus) => {
 		profileApi.updateUserStatus(userStatus)
 				.then(data => {
 					if (data.resultCode === 0) {
-						dispatch(setStatus(userStatus));
+						dispatch(setUserStatus(userStatus));
 					}
 				});
 	}

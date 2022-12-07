@@ -1,8 +1,8 @@
 import React from "react";
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {withRouter} from "../common/Common";
-import {getProfile, setStatus} from "../../redux/profile-reducer";
+import {withAuthRedirect, withRouter} from "../common/Common";
+import {getProfile, setStatus, updateStatus} from "../../redux/profile-reducer";
 import {compose} from "redux";
 
 class ProfileContainer extends React.Component {
@@ -25,11 +25,12 @@ let stateToPropsForRouter = (state) => {
 
 let dispatchToProps = {
 	getProfile,
-	setStatus
+	setStatus,
+	updateStatus
 }
 
 export default compose(
 		connect(stateToPropsForRouter, dispatchToProps),
 		withRouter,
-		// withAuthRedirect
+		withAuthRedirect
 )(ProfileContainer);
