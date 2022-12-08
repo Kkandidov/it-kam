@@ -15,6 +15,7 @@ const LoginForm = (props) => {
 					<Field placeholder={'Password'}
 						   name={'password'}
 						   component={Input}
+						   type={'password'}
 						   validate={[required]}/>
 				</div>
 				<div>
