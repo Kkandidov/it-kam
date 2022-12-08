@@ -2,6 +2,7 @@ import s from './Dialogs.module.css'
 import Dialog from "./dialog/Dialog";
 import Message from "./message/Message";
 import React from "react";
+import {Field, reduxForm} from "redux-form";
 
 const Dialogs = (props) => {
 
@@ -13,12 +14,22 @@ const Dialogs = (props) => {
 			<Message message={data.message}/>
 	);
 
-	let onAddNewMessage = () => props.addNewMessage();
+	let addNewMessage = (values) => props.addNewMessage(values.newMessage);
 
-	let onChangeNewMessage = (event) => {
-		let newMessage = event.target.value;
-		props.updateNewMessage(newMessage);
-	};
+	let NewMessageForm = (props) => {
+		return (
+				<form onSubmit={props.handleSubmit}>
+					<div>
+						<Field component={'textarea'} name={'newMessage'} placeholder='Enter new message'/>
+					</div>
+					<div>
+						<button>Send Message</button>
+					</div>
+				</form>
+		);
+	}
+
+	let NewMessageReduxForm = reduxForm({form: 'newMessage'})(NewMessageForm);
 
 	return (
 			<div className={s.dialogs}>
@@ -27,14 +38,7 @@ const Dialogs = (props) => {
 				</div>
 				<div className={s.messages}>
 					<div>{messageDataElements}</div>
-					<div>
-						<div><textarea onChange={onChangeNewMessage}
-									   value={props.newMessage}
-									   placeholder='Enter new message'></textarea></div>
-						<div>
-							<button onClick={onAddNewMessage}>Send Message</button>
-						</div>
-					</div>
+					<NewMessageReduxForm onSubmit={addNewMessage}/>
 				</div>
 			</div>
 	)
