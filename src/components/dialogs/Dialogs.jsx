@@ -3,6 +3,8 @@ import Dialog from "./dialog/Dialog";
 import Message from "./message/Message";
 import React from "react";
 import {Field, reduxForm} from "redux-form";
+import {Textarea} from "../common/FormControls";
+import {lengthCreator, required} from "../utils/Validators";
 
 const Dialogs = (props) => {
 
@@ -20,7 +22,10 @@ const Dialogs = (props) => {
 		return (
 				<form onSubmit={props.handleSubmit}>
 					<div>
-						<Field component={'textarea'} name={'newMessage'} placeholder='Enter new message'/>
+						<Field component={Textarea}
+							   name={'newMessage'}
+							   placeholder='Enter new message'
+							   validate={[required, lengthCreator(10)]}/>
 					</div>
 					<div>
 						<button>Send Message</button>
