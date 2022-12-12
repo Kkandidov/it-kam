@@ -15,6 +15,7 @@ const ProfileStatusWithHook = (props) => {
 
 	let deActivateEditMode = () => {
 		setEditMode(false);
+		debugger;
 		props.updateStatus(status);
 	}
 

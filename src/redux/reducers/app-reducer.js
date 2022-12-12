@@ -1,6 +1,6 @@
 import {auth} from "./auth-reducer";
 
-const INITIALIZED_APP = 'INITIALIZED_APP';
+const INITIALIZED_APP = 'app/INITIALIZED_APP';
 
 let initiatedState = {
 	initializedApp: false
