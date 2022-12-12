@@ -1,15 +1,16 @@
 import './App.css';
 import NavBar from "./components/navbar/NavBar";
-import {Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import DialogsContainer from "./components/dialogs/DialogsContainer";
 import UsersContainer from "./components/users/UsersContainer";
 import ProfileContainer from "./components/profile/ProfileContainer";
 import HeaderContainer from "./components/header/HeaderContainer";
 import React from "react";
 import Login from "./components/login/Login";
-import {connect} from "react-redux";
+import {connect, Provider} from "react-redux";
 import {appInitialized} from "./redux/reducers/app-reducer";
 import Preloader from "./components/common/preloader/Preloader";
+import store from "./redux/redux-strore";
 
 class App extends React.Component {
 	componentDidMount() {
@@ -47,4 +48,16 @@ let matStateToProps = (state) => {
 	}
 }
 
-export default connect(matStateToProps, {appInitialized})(App);
+let AppContainer = connect(matStateToProps, {appInitialized})(App);
+
+let SamurajJSApp = () => {
+	return (
+			<BrowserRouter>
+				<Provider store={store}>
+					<AppContainer />
+				</Provider>
+			</BrowserRouter>
+	)
+}
+
+export default SamurajJSApp;
