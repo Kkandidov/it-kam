@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/it-kam/static/css/main.c83087eb.css",
+    "main.js": "/it-kam/static/js/main.f836d2f0.js",
+    "static/css/201.87aa472b.chunk.css": "/it-kam/static/css/201.87aa472b.chunk.css",
+    "static/js/201.c4ffad37.chunk.js": "/it-kam/static/js/201.c4ffad37.chunk.js",
+    "static/css/478.50612617.chunk.css": "/it-kam/static/css/478.50612617.chunk.css",
+    "static/js/478.acf0fc9b.chunk.js": "/it-kam/static/js/478.acf0fc9b.chunk.js",
+    "static/css/822.a89ba35f.chunk.css": "/it-kam/static/css/822.a89ba35f.chunk.css",
+    "static/js/822.7f8fdfe6.chunk.js": "/it-kam/static/js/822.7f8fdfe6.chunk.js",
+    "static/js/787.28cb0dcd.chunk.js": "/it-kam/static/js/787.28cb0dcd.chunk.js",
+    "static/media/img.png": "/it-kam/static/media/img.323fe14c9164451bd28d.png",
+    "static/media/Spinner-3.gif": "/it-kam/static/media/Spinner-3.b51df3f3ec072548cb48.gif",
+    "index.html": "/it-kam/index.html",
+    "main.c83087eb.css.map": "/it-kam/static/css/main.c83087eb.css.map",
+    "main.f836d2f0.js.map": "/it-kam/static/js/main.f836d2f0.js.map",
+    "201.87aa472b.chunk.css.map": "/it-kam/static/css/201.87aa472b.chunk.css.map",
+    "201.c4ffad37.chunk.js.map": "/it-kam/static/js/201.c4ffad37.chunk.js.map",
+    "478.50612617.chunk.css.map": "/it-kam/static/css/478.50612617.chunk.css.map",
+    "478.acf0fc9b.chunk.js.map": "/it-kam/static/js/478.acf0fc9b.chunk.js.map",
+    "822.a89ba35f.chunk.css.map": "/it-kam/static/css/822.a89ba35f.chunk.css.map",
+    "822.7f8fdfe6.chunk.js.map": "/it-kam/static/js/822.7f8fdfe6.chunk.js.map",
+    "787.28cb0dcd.chunk.js.map": "/it-kam/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c83087eb.css",
+    "static/js/main.f836d2f0.js"
+  ]
+}
