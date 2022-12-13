@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/it-kam/static/css/main.c83087eb.css",
-    "main.js": "/it-kam/static/js/main.0c81dc19.js",
+    "main.js": "/it-kam/static/js/main.2885debd.js",
     "static/css/201.87aa472b.chunk.css": "/it-kam/static/css/201.87aa472b.chunk.css",
     "static/js/201.c4ffad37.chunk.js": "/it-kam/static/js/201.c4ffad37.chunk.js",
     "static/css/478.50612617.chunk.css": "/it-kam/static/css/478.50612617.chunk.css",
@@ -13,7 +13,7 @@
     "static/media/Spinner-3.gif": "/it-kam/static/media/Spinner-3.b51df3f3ec072548cb48.gif",
     "index.html": "/it-kam/index.html",
     "main.c83087eb.css.map": "/it-kam/static/css/main.c83087eb.css.map",
-    "main.0c81dc19.js.map": "/it-kam/static/js/main.0c81dc19.js.map",
+    "main.2885debd.js.map": "/it-kam/static/js/main.2885debd.js.map",
     "201.87aa472b.chunk.css.map": "/it-kam/static/css/201.87aa472b.chunk.css.map",
     "201.c4ffad37.chunk.js.map": "/it-kam/static/js/201.c4ffad37.chunk.js.map",
     "478.50612617.chunk.css.map": "/it-kam/static/css/478.50612617.chunk.css.map",
@@ -24,6 +24,6 @@
   },
   "entrypoints": [
     "static/css/main.c83087eb.css",
-    "static/js/main.0c81dc19.js"
+    "static/js/main.2885debd.js"
   ]
 }
