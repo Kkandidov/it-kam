@@ -1,6 +1,6 @@
 import './App.css';
 import NavBar from "./components/navbar/NavBar";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
 import HeaderContainer from "./components/header/HeaderContainer";
 import React, {Suspense} from 'react';
 import Login from "./components/login/Login";
